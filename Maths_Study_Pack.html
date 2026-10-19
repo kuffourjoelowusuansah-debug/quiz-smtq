@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maths Study Pack – Sets, Frequency and Probability</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EFE6CF;--card:#FBF6E8;--ink:#2E2926;--mut:#6B5F4B;--gold:#B8901C;--onGold:#fff;--line:#D9CBA5;--soft:#F3EAD0}
+@media (prefers-color-scheme:dark){:root{--bg:#3A3532;--card:#4A4440;--ink:#F4EBD3;--mut:#C9B885;--gold:#E9CC70;--onGold:#3A3532;--line:#5C554F;--soft:#423C38;color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Poppins,"Segoe UI",system-ui,sans-serif}
+header{text-align:center;padding:28px 16px 10px}
+header img{width:70px}
+h1{font-size:clamp(20px,4.5vw,30px);color:var(--gold);letter-spacing:.06em;margin:8px 0 2px}
+.sub{letter-spacing:.2em;font-size:11px;color:var(--mut);margin:0}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:10px 12px}
+nav a,button{font:500 13px Poppins,sans-serif;color:var(--gold);border:1px solid var(--gold);background:transparent;border-radius:999px;padding:6px 14px;text-decoration:none;cursor:pointer}
+nav a:hover,button:hover{background:var(--gold);color:var(--onGold)}
+main{max-width:860px;margin:0 auto;padding:0 16px 60px}
+.intro{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:18px 0}
+h2{font-size:22px;color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:6px;margin:44px 0 10px}
+h3{font-size:18px;margin:30px 0 8px;padding:8px 14px;background:var(--gold);color:var(--onGold);border-radius:10px}
+p{margin:.6em 0}
+ul,ol{padding-left:22px}li{margin:3px 0}
+table{border-collapse:collapse;margin:12px 0;display:block;overflow-x:auto;max-width:100%}
+th,td{border:1px solid var(--line);padding:6px 12px;text-align:center}
+th{background:var(--soft);color:var(--gold)}
+td:first-child,th:first-child{text-align:left}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 16px 12px;margin:12px 0}
+details.ans{margin-top:8px}
+summary{cursor:pointer;color:var(--gold);font-weight:500;font-size:14px}
+.work{border-left:3px solid var(--gold);padding:2px 12px;margin-top:8px;background:var(--soft);border-radius:0 8px 8px 0}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:20px}
+@media print{nav,.tools{display:none}details.ans:not([open])>*:not(summary){display:block}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<header>
+<img alt="Disciple Study Group icon" src="data:image/png;base64,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">
+<h1>MATHS STUDY PACK</h1>
+<p class="sub">SETS · FREQUENCY · PROBABILITY</p>
+</header>
+<nav>
+<a href="#partA">Notes</a><a href="#sets">Sets</a><a href="#frequency">Frequency</a><a href="#probability">Probability</a>
+<a href="#partB">Questions</a><a href="#partC">Answers</a>
+</nav>
+<main>
+<div class="intro"><b>Disciple Study Group.</b> Read the notes in Part A (one section per topic), try the 60 questions in Part B without looking, then check your working. Each question has a “Show answer” button, and Part C lists every answer with its worked explanation.</div>
+
+<h2 id="partA">Part A: Notes</h2>
+<h3 id="sets">Topic 1: Sets</h3>
+<p><strong>1.1 What is a set?</strong> A set is a collection of things (numbers or objects). Each thing in the set is called an element (or member). A set is always written inside curly brackets { }.</p>
+<p><strong>1.2 Three ways to write a set</strong></p>
+<ul>
+<li>Listing the elements: {2, 3, 5, 7}</li>
+<li>Giving a description: {prime numbers less than 10}</li>
+<li>Formal (set-builder) notation: {x : x is a prime number less than 10}. Read it as “the set of all x such that x is a prime number less than 10”.</li>
+</ul>
+<p>All three describe the same set.</p>
+<p><strong>1.3 Symbols you must know</strong></p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ξ (or U)</td>
+<td>universal set: the group of things the elements are selected from</td>
+<td>ξ = {1, 2, 3, …, 10}</td>
+</tr>
+<tr>
+<td>∈</td>
+<td>is a member of</td>
+<td>3 ∈ {2, 3, 5}</td>
+</tr>
+<tr>
+<td>∉</td>
+<td>is not a member of</td>
+<td>4 ∉ {2, 3, 5}</td>
+</tr>
+<tr>
+<td>n(A)</td>
+<td>the number of elements in A</td>
+<td>A = {2, 3, 5}, so n(A) = 3</td>
+</tr>
+<tr>
+<td>∅ or { }</td>
+<td>the empty set (no elements)</td>
+<td>{even primes greater than 2} = ∅</td>
+</tr>
+<tr>
+<td>A′</td>
+<td>complement of A: everything in ξ that is not in A</td>
+<td>ξ = {1, 2, 3, 4}, A = {1, 2}, so A′ = {3, 4}</td>
+</tr>
+<tr>
+<td>A ∪ B</td>
+<td>union: elements in A or B (or both)</td>
+<td>{1, 2} ∪ {2, 3} = {1, 2, 3}</td>
+</tr>
+<tr>
+<td>A ∩ B</td>
+<td>intersection: elements in both A and B</td>
+<td>{1, 2} ∩ {2, 3} = {2}</td>
+</tr>
+<tr>
+<td>⊂</td>
+<td>is a subset of</td>
+<td>{2, 4} ⊂ {2, 4, 6}</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.4 Types of sets and subsets</strong></p>
+<ul>
+<li>A finite set can be counted. An infinite set cannot.</li>
+<li>The empty set ∅ is a subset of every set, and every set is a subset of itself.</li>
+<li>A set with n elements has 2ⁿ subsets. For example {a, b} has 2² = 4 subsets: ∅, {a}, {b}, {a, b}.</li>
+</ul>
+<p><strong>1.5 Venn diagrams</strong></p>
+<ul>
+<li>The rectangle is the universal set ξ. Each set is drawn as a circle.</li>
+<li>Where the two circles overlap is A ∩ B.</li>
+<li>Everything inside the circles is A ∪ B.</li>
+<li>Everything outside circle A (but inside the rectangle) is A′.</li>
+<li>A Venn diagram can show the actual elements or just the number of elements in each region.</li>
+</ul>
+<p><strong>1.6 Key formulas</strong></p>
+<ul>
+<li>n(A ∪ B) = n(A) + n(B) − n(A ∩ B). We subtract the overlap because it was counted twice.</li>
+<li>n(A′) = n(ξ) − n(A)</li>
+<li>Number in neither set = n(ξ) − n(A ∪ B)</li>
+</ul>
+<p><strong>1.7 How to solve a Venn diagram problem</strong></p>
+<ol>
+<li>Draw a rectangle with two overlapping circles and label them.</li>
+<li>Fill in the overlap (the “both” number) first.</li>
+<li>Work out the “only” regions: only A = n(A) − both, only B = n(B) − both.</li>
+<li>Add the regions inside the circles. The number outside = total − that sum.</li>
+<li>Check that all regions add up to the total.</li>
+</ol>
+<p>Worked example (from the textbook): In a class of 30 pupils, 8 like mustard, 24 like ketchup and 5 like both.</p>
+<ul>
+<li>Both = 5</li>
+<li>Mustard only = 8 − 5 = 3</li>
+<li>Ketchup only = 24 − 5 = 19</li>
+<li>Neither = 30 − 3 − 5 − 19 = 3</li>
+<li>Like mustard or ketchup = 3 + 5 + 19 = 27, which is the same as 8 + 24 − 5</li>
+<li>P(a pupil likes both) = 5/30 = 1/6</li>
+</ul>
+<p>For three sets: fill the centre (all three) first, then each “two only” region (pair total − centre), then each “one only” region, then the outside.</p>
+<p><strong>1.8 Common mistakes</strong></p>
+<ul>
+<li>Writing the whole circle total (for example 8) in the “only” region instead of subtracting the overlap first.</li>
+<li>Forgetting the region outside the circles (the “neither” group).</li>
+<li>Mixing up ∪ and ∩. Union means “or” (everything), intersection means “and” (the overlap).</li>
+<li>Forgetting to simplify a final probability.</li>
+</ul>
+<h3 id="frequency">Topic 2: Frequency</h3>
+<p><strong>2.1 What is frequency?</strong> The frequency of a value is the number of times it occurs. A frequency table lists each value with its frequency. The total frequency (Σf) is the number of items in the data. Tally marks are counted in groups of five.</p>
+<p><strong>2.2 Mean, median, mode and range (from a list)</strong></p>
+<ul>
+<li>MODE = the MOST common value.</li>
+<li>MEDIAN = the MIDDLE value when the values are in order of size. Its position is (n + 1) ÷ 2. If there are two middle numbers, the median is halfway between them.</li>
+<li>MEAN = TOTAL of items ÷ NUMBER of items.</li>
+<li>RANGE = the difference between the highest and the lowest value.</li>
+</ul>
+<p>Golden rule: always REARRANGE the data in ASCENDING ORDER first. You must do this for the median, and it also helps with the mode.</p>
+<p>Worked example (from the textbook): find the median, mode, mean and range of 2, 5, 3, 2, 0, 1, 3, 3.</p>
+<ul>
+<li>Ascending order: 0, 1, 2, 2, 3, 3, 3, 5</li>
+<li>Median: position (8 + 1) ÷ 2 = 4.5, so halfway between the 4th value (2) and the 5th value (3), giving 2.5</li>
+<li>Mode = 3</li>
+<li>Mean = (0 + 1 + 2 + 2 + 3 + 3 + 3 + 5) ÷ 8 = 19 ÷ 8 = 2.375</li>
+<li>Range = 5 − 0 = 5</li>
+</ul>
+<p><strong>2.3 Working backwards: total = number × mean</strong> Since mean = total ÷ number, we get total = number of items × mean.</p>
+<p>Textbook example: 8 penguins have a total height of 368 cm. After two are moved, the 6 remaining have a mean of 44.5 cm.</p>
+<ul>
+<li>Total of the 6 remaining = 6 × 44.5 = 267 cm</li>
+<li>Combined height of the two moved = 368 − 267 = 101 cm (here the heights are 50 cm and 51 cm)</li>
+</ul>
+<p>If a new value is added: a value above the old mean pulls the mean up, and a value below it pulls the mean down.</p>
+<p><strong>2.4 Averages from a frequency table</strong> Add a column for f × x (frequency times value).</p>
+<ul>
+<li>Mean = Σfx ÷ Σf</li>
+<li>Mode = the value (x) with the highest frequency</li>
+<li>Median: the position is (Σf + 1) ÷ 2. Use a running total (cumulative frequency) to find which value sits there.</li>
+<li>Range = highest x − lowest x (use the values, not the frequencies)</li>
+</ul>
+<p>Worked example: goals scored in 20 matches.</p>
+<table>
+<thead>
+<tr>
+<th>Goals (x)</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency (f)</td>
+<td>2</td>
+<td>5</td>
+<td>8</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>f × x</td>
+<td>2</td>
+<td>10</td>
+<td>24</td>
+<td>12</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Σf = 20 and Σfx = 58, so mean = 58 ÷ 20 = 2.9</li>
+<li>Mode = 3 (it has the highest frequency, 8)</li>
+<li>Median position = (20 + 1) ÷ 2 = 10.5. Running totals are 2, 7, 15, so the 10th and 11th values are both 3. Median = 3</li>
+<li>Range = 5 − 1 = 4</li>
+</ul>
+<p><strong>2.5 Relative frequency</strong> Relative frequency = frequency of the event ÷ total number of trials. It can be written as a fraction, decimal or percentage, and it gives an estimate of the probability. The more times you repeat the experiment, the better the estimate. All the relative frequencies add up to 1.</p>
+<p>Textbook example: a spinner was spun 100 times.</p>
+<table>
+<thead>
+<tr>
+<th>Score</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency</td>
+<td>3</td>
+<td>14</td>
+<td>41</td>
+<td>20</td>
+<td>18</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Relative frequency</td>
+<td>0.03</td>
+<td>0.14</td>
+<td>0.41</td>
+<td>0.20</td>
+<td>0.18</td>
+<td>0.04</td>
+</tr>
+</tbody>
+</table>
+<p>Fair or biased? If a spinner is fair, the relative frequencies should roughly match the theoretical probabilities (for a fair 6-sided spinner, about 1/6 ≈ 0.17 each). If they are far away, it is probably biased. Here 3 has 0.41 while 1 has only 0.03, so this spinner looks biased.</p>
+<p>Textbook survey: 150 families with four children, number of girls 0, 1, 2, 3, 4 had frequencies 8, 41, 55, 33, 13. P(exactly two girls) = 55/150 = 11/30.</p>
+<p><strong>2.6 Frequency trees</strong> Use a frequency tree when an experiment has two or more steps.</p>
+<p>Textbook example: 120 students were asked if they would go on to do A-level maths. 45 said yes. Of those, 30 actually did. Of those who said no, 9 actually did.</p>
+<ul>
+<li>Said no = 120 − 45 = 75</li>
+<li>Said yes but did not = 45 − 30 = 15</li>
+<li>Said no and did not = 75 − 9 = 66</li>
+<li>P(a student who said no actually did) = 9/75 = 0.12</li>
+</ul>
+<p>Tip: each pair of branches must add up to the number they came from.</p>
+<p><strong>2.7 Expected frequency</strong> Expected frequency = probability × number of trials. It is an estimate, so “about” that many times, not exactly.</p>
+<p>Example: a fair 8-sided spinner is spun 200 times. P(5) = 1/8, so the expected number of 5s = 1/8 × 200 = 25.</p>
+<p><strong>2.8 Common mistakes</strong></p>
+<ul>
+<li>Finding the median without putting the data in order first.</li>
+<li>Dividing Σfx by the number of rows in the table instead of by Σf.</li>
+<li>Giving the highest frequency as the mode instead of the value that has it.</li>
+<li>Giving the range as a difference of frequencies instead of values.</li>
+<li>Treating an expected frequency as a guarantee.</li>
+</ul>
+<h3 id="probability">Topic 3: Probability</h3>
+<p><strong>3.1 The probability scale</strong> Probabilities are always between 0 and 1. 0 means impossible (it will NEVER happen) and 1 means certain (it will DEFINITELY happen). 1/4 is unlikely, 1/2 is evens and 3/4 is likely. Probabilities can be written as fractions, decimals or percentages (for example 1/4 = 0.25 = 25%). A probability can never be negative or bigger than 1.</p>
+<p><strong>3.2 Key words (from the textbook)</strong></p>
+<ul>
+<li>Experiment: any operation whose outcome cannot be predicted with certainty, such as tossing a coin.</li>
+<li>Trial: a single performance of the experiment.</li>
+<li>Random sampling: choosing a sample without bias.</li>
+<li>Sample space: the set of all possible outcomes of an experiment, for example {1, 2, 3, 4, 5, 6} for one die.</li>
+<li>Event: a collection of sample points with a common property, for example E = {2, 4, 6} for “an even number”.</li>
+<li>Equally likely events: events that have equal chances of occurring.</li>
+</ul>
+<p><strong>3.3 The formula</strong> When all outcomes are equally likely (a fair coin, die or spinner, or a random pick):</p>
+<p>P(E) = number of ways E can happen ÷ total number of possible outcomes = n(E) ÷ n(U)</p>
+<p><strong>3.4 Probabilities add up to 1</strong> P(E) + P(E′) = 1, so P(E′) = 1 − P(E). E′ is the event that E does not happen. The probabilities of all the possible results add up to 1.</p>
+<p>Example: a spinner has P(red) = 0.1, P(blue) = 0.4 and P(yellow) = 0.3. Then P(green) = 1 − (0.1 + 0.4 + 0.3) = 0.2 and P(not green) = 1 − 0.2 = 0.8.</p>
+<p><strong>3.5 Number words you will meet</strong></p>
+<ul>
+<li>Even: 2, 4, 6, 8 … Odd: 1, 3, 5, 7 …</li>
+<li>Prime: a number with exactly two factors: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 … (1 is not prime, and 2 is the only even prime)</li>
+<li>Multiple of 3: 3, 6, 9, 12 … Factors of 12: 1, 2, 3, 4, 6, 12</li>
+<li>Perfect squares: 1, 4, 9, 16, 25 …</li>
+<li>“Between 4 and 8” does not include 4 and 8. “Inclusive” does include the end numbers.</li>
+<li>Counting whole numbers from a to b inclusive: b − a + 1. For example, 5 to 25 inclusive has 25 − 5 + 1 = 21 numbers.</li>
+</ul>
+<p><strong>3.6 Types of questions (from the textbook)</strong></p>
+<ul>
+<li>Type 1, simple cases (bags, marbles, letters, cards, numbers): list the sample space, count the favourable outcomes and divide. Example: a bag has 24 marbles, 10 blue and the rest green. Green = 24 − 10 = 14, so P(green) = 14/24 = 7/12.</li>
+<li>Type 2, coins: always write out the sample space first. If a fair coin is tossed n times, there are 2ⁿ outcomes. Two coins give 4 outcomes {HH, HT, TH, TT}. Three coins give 8. Tossing one coin twice is the same as tossing two coins once.</li>
+<li>Type 3, dice: the sample space for one die is {1, 2, 3, 4, 5, 6}. Two dice give 36 outcomes.</li>
+<li>Type 4, relative frequency: use a frequency table (see Topic 2).</li>
+</ul>
+<p><strong>3.7 Sample space diagrams</strong> A sample space diagram shows all the possible outcomes. It can be a simple list, or a two-way table when two things happen together.</p>
+<p>Textbook example: a spinner with 1, 2, 3 is spun twice and the scores added.</p>
+<table>
+<thead>
+<tr>
+<th>+</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>There are 9 outcomes. P(total 3) = 2/9. P(total 4 or more) = 6/9 = 2/3.</p>
+<p><strong>3.8 Finding an unknown number</strong> Textbook example: a box has 20 beads, some red and some green, and P(red) = 1/4. Let x be the number of red beads. Then x/20 = 1/4, so 4x = 20 and x = 5.</p>
+<p><strong>3.9 Probability from a Venn diagram or frequency table</strong> Use the correct region or row as the top of the fraction and the total (of the whole group or table) as the bottom. For example, if 5 pupils out of 30 like both mustard and ketchup, P(both) = 5/30 = 1/6.</p>
+<p><strong>3.10 Going further: AND, OR and picking without replacement</strong></p>
+<ul>
+<li>OR, for events that cannot both happen (mutually exclusive): P(A or B) = P(A) + P(B).</li>
+<li>AND, for independent events (one does not affect the other): P(A and B) = P(A) × P(B). Example: P(rain on Monday) = 0.2 and P(rain on Tuesday) = 0.5, so P(rain on both) = 0.2 × 0.5 = 0.1.</li>
+<li>Without replacement: after each pick the total goes down by one. Example: a bag has 3 red and 2 blue balls and two are picked. P(both red) = 3/5 × 2/4 = 6/20 = 3/10.</li>
+</ul>
+<p><strong>3.11 Step-by-step method</strong></p>
+<ol>
+<li>Read the question and decide what the total number of outcomes is.</li>
+<li>If it helps, list the sample space.</li>
+<li>Count the outcomes that match the event.</li>
+<li>Write the fraction (favourable ÷ total) and simplify.</li>
+<li>Check your answer is between 0 and 1.</li>
+</ol>
+<p><strong>3.12 Common mistakes</strong></p>
+<ul>
+<li>Using the wrong total (for example, using only the boys instead of the whole class).</li>
+<li>Forgetting that “not” means 1 minus the probability.</li>
+<li>Counting 1 as a prime number.</li>
+<li>Leaving out outcomes when listing a sample space, especially for two or three coins and two dice.</li>
+<li>Writing a probability bigger than 1 or as a negative number.</li>
+</ul>
+
+<h2 id="partB">Part B: Questions</h2>
+<p>Show your working. Give fractions in their simplest form unless told otherwise.</p>
+<div class="tools"><button id="openAll">Show all answers</button><button id="closeAll">Hide all answers</button></div>
+<h3 id="qsets">Section 1: Sets (Questions 1 to 20)</h3>
+<div class="q" id="q1"><p><strong>1.</strong> List the elements of A = {x : x is a prime number less than 20} and state n(A).</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>A = {2, 3, 5, 7, 11, 13, 17, 19}. Prime numbers have exactly two factors (1 is not prime). Counting them gives n(A) = 8.</p></div></details></div><div class="q" id="q2"><p><strong>2.</strong> ξ = {1, 2, 3, …, 10} and A = {2, 4, 6, 8, 10}. Find A′ and n(A′).</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>A′ is everything in ξ that is not in A, so A′ = {1, 3, 5, 7, 9} and n(A′) = 5. Check: n(ξ) − n(A) = 10 − 5 = 5.</p></div></details></div><div class="q" id="q3"><p><strong>3.</strong> Write the set {3, 6, 9, 12, 15} using formal (set-builder) notation.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>{x : x is a multiple of 3, 3 ≤ x ≤ 15}. Another correct form is {x : x = 3k, k = 1, 2, 3, 4, 5}.</p></div></details></div><div class="q" id="q4"><p><strong>4.</strong> Fill in ∈ or ∉:<br />
+(a) 7 ___ {x : x is a prime number}<br />
+(b) 12 ___ {x : x is an odd number}<br />
+(c) 5 ___ {x : x is an integer, 4 &lt; x &lt; 8}<br />
+(d) 9 ___ {x : x is a prime number}</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) 7 ∈ (7 is prime). (b) 12 ∉ (12 is even, not odd). (c) 5 ∈ (the integers between 4 and 8 are 5, 6, 7). (d) 9 ∉ (9 = 3 × 3 has three factors, so it is not prime).</p></div></details></div><div class="q" id="q5"><p><strong>5.</strong> A = {1, 2, 3, 4, 5, 6} and B = {2, 4, 6, 8, 10}. Find (a) A ∪ B (b) A ∩ B.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) A ∪ B = {1, 2, 3, 4, 5, 6, 8, 10}. List everything in A or B, writing 2, 4 and 6 only once. (b) A ∩ B = {2, 4, 6}, the elements in both sets.</p></div></details></div><div class="q" id="q6"><p><strong>6.</strong> n(A) = 12, n(B) = 9 and n(A ∩ B) = 4. Find n(A ∪ B).</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 12 + 9 − 4 = 17.</p></div></details></div><div class="q" id="q7"><p><strong>7.</strong> How many subsets does the set {a, b, c, d} have?</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>A set with 4 elements has 2⁴ = 16 subsets.</p></div></details></div><div class="q" id="q8"><p><strong>8.</strong> P = {factors of 12} and Q = {factors of 18}. List P, Q and P ∩ Q.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>P = {1, 2, 3, 4, 6, 12}, Q = {1, 2, 3, 6, 9, 18} and P ∩ Q = {1, 2, 3, 6}.</p></div></details></div><div class="q" id="q9"><p><strong>9.</strong> ξ = {1, 2, 3, …, 15}, A = {multiples of 3} and B = {multiples of 5}. Find (a) A ∩ B (b) A ∪ B (c) (A ∪ B)′ and n((A ∪ B)′).</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>A = {3, 6, 9, 12, 15} and B = {5, 10, 15}. (a) A ∩ B = {15}. (b) A ∪ B = {3, 5, 6, 9, 10, 12, 15}. (c) (A ∪ B)′ = {1, 2, 4, 7, 8, 11, 13, 14}, so n((A ∪ B)′) = 8. Check: 15 − 7 = 8.</p></div></details></div><div class="q" id="q10"><p><strong>10.</strong> In a class of 40 pupils, 25 play football, 18 play volleyball and 6 play neither. How many pupils play both games?</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Pupils who play football or volleyball = 40 − 6 = 34. Both = 25 + 18 − 34 = 9.</p></div></details></div><div class="q" id="q11"><p><strong>11.</strong> 50 birdwatchers were looking for pigeons and seagulls. 28 of them saw a pigeon, 15 saw both birds and 10 did not see either bird. Show this on a Venn diagram and use it to find the probability that a randomly selected birdwatcher saw a seagull.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Both = 15. Pigeon only = 28 − 15 = 13. Saw at least one bird = 50 − 10 = 40. Seagull only = 40 − 28 = 12. So the number who saw a seagull = 12 + 15 = 27. The Venn diagram has pigeon only 13, both 15, seagull only 12 and neither 10 (13 + 15 + 12 + 10 = 50). P(seagull) = 27/50.</p></div></details></div><div class="q" id="q12"><p><strong>12.</strong> Of 60 students, 35 study Science, 28 study Art and 10 study neither subject. Find the number who study (a) both subjects (b) Science only (c) Art only.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Science or Art = 60 − 10 = 50. (a) Both = 35 + 28 − 50 = 13. (b) Science only = 35 − 13 = 22. (c) Art only = 28 − 13 = 15. Check: 22 + 13 + 15 + 10 = 60.</p></div></details></div><div class="q" id="q13"><p><strong>13.</strong> n(ξ) = 50, n(A) = 22, n(B) = 18 and n(A ∩ B) = 7. Find (a) n(A ∪ B) (b) n((A ∪ B)′).</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) n(A ∪ B) = 22 + 18 − 7 = 33. (b) n((A ∪ B)′) = 50 − 33 = 17.</p></div></details></div><div class="q" id="q14"><p><strong>14.</strong> In a group of 100 people, 70 speak Twi and 45 speak English. Everyone speaks at least one of the two languages. How many speak (a) both (b) Twi only (c) English only?</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Everyone speaks at least one language, so the union is 100. (a) Both = 70 + 45 − 100 = 15. (b) Twi only = 70 − 15 = 55. (c) English only = 45 − 15 = 30. Check: 55 + 15 + 30 = 100.</p></div></details></div><div class="q" id="q15"><p><strong>15.</strong> On a Venn diagram with two overlapping circles A and B inside a rectangle ξ, write the set notation for (a) the region where the circles overlap (b) everything inside both circles together (c) everything outside circle A.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) A ∩ B (b) A ∪ B (c) A′.</p></div></details></div><div class="q" id="q16"><p><strong>16.</strong> List all the subsets of {p, q, r}.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>A set with 3 elements has 2³ = 8 subsets: ∅, {p}, {q}, {r}, {p, q}, {p, r}, {q, r}, {p, q, r}.</p></div></details></div><div class="q" id="q17"><p><strong>17.</strong> ξ = {x : x is an integer, 1 ≤ x ≤ 20}, A = {multiples of 4} and B = {even numbers}. List A, state whether A ⊂ B, and find n(A′ ∩ B).</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>A = {4, 8, 12, 16, 20}. Every multiple of 4 is even, so A ⊂ B. B has 10 elements (2, 4, …, 20). A′ ∩ B means even numbers that are not multiples of 4: {2, 6, 10, 14, 18}, so n(A′ ∩ B) = 5. Check: 10 − 5 = 5.</p></div></details></div><div class="q" id="q18"><p><strong>18.</strong> Of 120 pupils in a school, 75 play table tennis, 60 play chess, x play both and 15 play neither. Find x.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Pupils who play at least one game = 120 − 15 = 105. So 75 + 60 − x = 105, which gives 135 − x = 105 and x = 30.</p></div></details></div><div class="q" id="q19"><p><strong>19.</strong> In a class of 40 pupils, 22 like rice, 18 like banku and 15 like fufu. 8 like rice and banku, 6 like banku and fufu, 5 like rice and fufu, and 3 like all three. Find (a) how many like none of the three (b) how many like rice only.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Work from the centre outwards. All three = 3. Rice and banku only = 8 − 3 = 5. Banku and fufu only = 6 − 3 = 3. Rice and fufu only = 5 − 3 = 2. Rice only = 22 − 5 − 2 − 3 = 12. Banku only = 18 − 5 − 3 − 3 = 7. Fufu only = 15 − 3 − 2 − 3 = 7. Total inside the circles = 12 + 7 + 7 + 5 + 3 + 2 + 3 = 39. (a) None = 40 − 39 = 1. (b) Rice only = 12.</p></div></details></div><div class="q" id="q20"><p><strong>20.</strong> In a class of 30 pupils, 8 like mustard, 24 like ketchup and 5 like both. A pupil is chosen at random. Find the probability that the pupil likes (a) mustard or ketchup (b) neither (c) ketchup only.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Both = 5, mustard only = 8 − 5 = 3, ketchup only = 24 − 5 = 19 and neither = 30 − 27 = 3. (a) 27/30 = 9/10. (b) 3/30 = 1/10. (c) 19/30.</p></div></details></div><h3 id="qfreq">Section 2: Frequency (Questions 21 to 40)</h3>
+<div class="q" id="q21"><p><strong>21.</strong> Make a frequency table for this data: 3, 5, 4, 3, 2, 5, 3, 4, 3, 5, 2, 3.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Count how many times each value appears. The total must be 12.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Tally</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>II</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>IIII I</td>
+<td>5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>II</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>III</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Total</td>
+<td></td>
+<td>12</td>
+</tr>
+</tbody>
+</table></div></details></div><div class="q" id="q22"><p><strong>22.</strong> Find the mean, median, mode and range of these test scores: 6, 15, 12, 12, 11.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>In ascending order: 6, 11, 12, 12, 15. Mean = 56 ÷ 5 = 11.2. Median = 12 (the middle value, position 3). Mode = 12. Range = 15 − 6 = 9.</p></div></details></div><div class="q" id="q23"><p><strong>23.</strong> Find the mean, median, mode and range of: 4, 7, 7, 9, 3, 8, 7, 2.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>In ascending order: 2, 3, 4, 7, 7, 7, 8, 9. Total = 47, so mean = 47 ÷ 8 = 5.875. Median position = 4.5, and the 4th and 5th values are both 7, so the median is 7. Mode = 7. Range = 9 − 2 = 7.</p></div></details></div><div class="q" id="q24"><p><strong>24.</strong> The mean of five numbers is 8. Four of the numbers are 5, 9, 10 and 6. Find the fifth number.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Total = 5 × 8 = 40. The four known numbers add up to 5 + 9 + 10 + 6 = 30. The fifth number = 40 − 30 = 10.</p></div></details></div><div class="q" id="q25"><p><strong>25.</strong> A set of 8 heights has a mean of 1.6 m. A new height of 1.5 m is added. Without calculating, will the mean of all 9 heights be higher or lower than 1.6 m? Explain, then work out the new mean to 2 decimal places.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Lower, because 1.5 m is less than the mean of 1.6 m, so it pulls the mean down. Old total = 8 × 1.6 = 12.8 m. New total = 12.8 + 1.5 = 14.3 m. New mean = 14.3 ÷ 9 = 1.59 m (2 d.p.).</p></div></details></div><div class="q" id="q26"><p><strong>26.</strong> The mean of 6 numbers is 7. When a seventh number is added, the mean becomes 8. Find the seventh number.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Old total = 6 × 7 = 42. New total = 7 × 8 = 56. The seventh number = 56 − 42 = 14.</p></div></details></div><div class="q" id="q27"><p><strong>27.</strong> The table shows the scores of 20 pupils in a quiz. Find the mean score.</p>
+<table>
+<thead>
+<tr>
+<th>Score</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency</td>
+<td>3</td>
+<td>6</td>
+<td>5</td>
+<td>4</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>f × x = 3, 12, 15, 16, 10, so Σfx = 56. Σf = 20. Mean = 56 ÷ 20 = 2.8.</p></div></details></div><div class="q" id="q28"><p><strong>28.</strong> The table shows the number of goals scored in 20 matches. Find the mode, the median and the range.</p>
+<table>
+<thead>
+<tr>
+<th>Goals</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency</td>
+<td>5</td>
+<td>8</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Σf = 20. Mode = 1 (it has the highest frequency, 8). Median position = (20 + 1) ÷ 2 = 10.5. The running totals are 5, 13, …, so the 10th and 11th values are both 1 and the median = 1. Range = 4 − 0 = 4.</p></div></details></div><div class="q" id="q29"><p><strong>29.</strong> The marks of 20 students in a test are shown. Find the mean mark.</p>
+<table>
+<thead>
+<tr>
+<th>Mark</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency</td>
+<td>1</td>
+<td>3</td>
+<td>7</td>
+<td>6</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>f × x = 4, 15, 42, 42, 24, so Σfx = 127. Σf = 20. Mean = 127 ÷ 20 = 6.35.</p></div></details></div><div class="q" id="q30"><p><strong>30.</strong> A coin is tossed 80 times and lands on heads 36 times. Find the relative frequency of (a) heads (b) tails, as decimals.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) 36/80 = 0.45. (b) Tails = 80 − 36 = 44, and 44/80 = 0.55. The two relative frequencies add up to 1.</p></div></details></div><div class="q" id="q31"><p><strong>31.</strong> A spinner was spun 100 times with these results.</p>
+<table>
+<thead>
+<tr>
+<th>Score</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency</td>
+<td>3</td>
+<td>14</td>
+<td>41</td>
+<td>20</td>
+<td>18</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>(a) Find the relative frequency of getting a 3. (b) Estimate the probability of getting a score greater than 3.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) 41/100 = 0.41. (b) A score greater than 3 means 4, 5 or 6: 20 + 18 + 4 = 42, so the estimate is 42/100 = 0.42.</p></div></details></div><div class="q" id="q32"><p><strong>32.</strong> Use the results in Question 31 to decide whether the spinner is fair or biased. Give a reason.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>The spinner is biased. For a fair 6-sided spinner each score should have a relative frequency near 1/6, about 0.17. Here 3 has 0.41 (far too high), while 1 has 0.03 and 6 has 0.04 (far too low).</p></div></details></div><div class="q" id="q33"><p><strong>33.</strong> In a survey of 150 families with four children, the number of girls was recorded.</p>
+<table>
+<thead>
+<tr>
+<th>Number of girls</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency</td>
+<td>8</td>
+<td>41</td>
+<td>55</td>
+<td>33</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+<p>Estimate the probability that a family chosen at random has (a) exactly one girl (b) at most one girl (c) more than two girls.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) 41/150. (b) At most one girl means 0 or 1 girl: (8 + 41)/150 = 49/150. (c) More than two girls means 3 or 4: (33 + 13)/150 = 46/150 = 23/75.</p></div></details></div><div class="q" id="q34"><p><strong>34.</strong> A fair die is rolled 300 times. How many times would you expect to get (a) a 6 (b) an even number?</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) P(6) = 1/6, so expected 6s = 1/6 × 300 = 50. (b) P(even) = 3/6 = 1/2, so expected even numbers = 1/2 × 300 = 150.</p></div></details></div><div class="q" id="q35"><p><strong>35.</strong> A bag contains 5 red, 3 blue and 2 green balls. A ball is picked at random, its colour is recorded and it is put back. This is done 200 times. How many blue balls would you expect?</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>There are 10 balls, so P(blue) = 3/10. Expected blue = 3/10 × 200 = 60.</p></div></details></div><div class="q" id="q36"><p><strong>36.</strong> Ama visited a shop 20 times and received a free sticker 6 times. Kofi visited the same shop 200 times and received a free sticker 58 times. (a) Use Ama’s results to estimate the probability of getting a free sticker. (b) Whose results give the better estimate? Explain.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) 6/20 = 0.3. (b) Kofi’s results give the better estimate, because they come from many more trials (200 compared with 20). His relative frequency is 58/200 = 0.29.</p></div></details></div><div class="q" id="q37"><p><strong>37.</strong> 80 pupils were asked if they would join the science club. 50 said yes. Of those who said yes, 40 actually joined. Of those who said no, 6 actually joined. (a) Complete a frequency tree with the numbers who said yes or no and who joined or did not. (b) A pupil who said no is chosen at random. Find the probability that the pupil actually joined.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) Of the 80 pupils, 50 said yes and 80 − 50 = 30 said no. Of the 50 who said yes, 40 joined and 50 − 40 = 10 did not. Of the 30 who said no, 6 joined and 30 − 6 = 24 did not. (b) 6/30 = 1/5.</p></div></details></div><div class="q" id="q38"><p><strong>38.</strong> The mean mass of 5 boys is 48 kg. Two of the boys, with masses 45 kg and 52 kg, leave. Find the mean mass of the 3 boys who remain, to 1 decimal place.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Total mass = 5 × 48 = 240 kg. Mass that left = 45 + 52 = 97 kg. Remaining total = 240 − 97 = 143 kg. Mean = 143 ÷ 3 = 47.7 kg (1 d.p.).</p></div></details></div><div class="q" id="q39"><p><strong>39.</strong> The table shows the number of pets in 25 homes. Find the mean, the median and the mode.</p>
+<table>
+<thead>
+<tr>
+<th>Pets</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency</td>
+<td>4</td>
+<td>9</td>
+<td>7</td>
+<td>3</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Σf = 25. f × x = 0, 9, 14, 9, 8, so Σfx = 40 and the mean = 40 ÷ 25 = 1.6. Median position = (25 + 1) ÷ 2 = 13. The running totals are 4, 13, …, so the 13th value is 1 and the median = 1. Mode = 1 (frequency 9).</p></div></details></div><div class="q" id="q40"><p><strong>40.</strong> The ages of 7 players are 17, 19, 18, x, 20, 18 and 16, and their mean age is 18. Find x, then find the mode and the range of the ages.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Total age = 7 × 18 = 126. The known ages add up to 17 + 19 + 18 + 20 + 18 + 16 = 108, so x = 126 − 108 = 18. In order the ages are 16, 17, 18, 18, 18, 19, 20. Mode = 18. Range = 20 − 16 = 4.</p></div></details></div><h3 id="qprob">Section 3: Probability (Questions 41 to 60)</h3>
+<div class="q" id="q41"><p><strong>41.</strong> A bag contains 30 marbles. 12 are white and the rest are black. A marble is picked at random. Find the probability that it is black.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Black marbles = 30 − 12 = 18. P(black) = 18/30 = 3/5.</p></div></details></div><div class="q" id="q42"><p><strong>42.</strong> A letter is chosen at random from the word MATHEMATICS. Find the probability that it is (a) an H (b) an M (c) a B (d) a vowel (e) a letter other than an A.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>MATHEMATICS has 11 letters: M, A, T, H, E, M, A, T, I, C, S. (a) 1/11. (b) 2/11. (c) 0, because there is no B (impossible). (d) The vowels are A, E, A, I, so 4/11. (e) Letters that are not A = 11 − 2 = 9, so 9/11.</p></div></details></div><div class="q" id="q43"><p><strong>43.</strong> A number is chosen at random from the set {1, 2, 3, …, 20}. Find the probability that it is (a) a prime number (b) a multiple of 4 (c) a perfect square.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>n(U) = 20. (a) Primes: 2, 3, 5, 7, 11, 13, 17, 19 (8 of them), so 8/20 = 2/5. (b) Multiples of 4: 4, 8, 12, 16, 20 (5), so 5/20 = 1/4. (c) Perfect squares: 1, 4, 9, 16 (4), so 4/20 = 1/5.</p></div></details></div><div class="q" id="q44"><p><strong>44.</strong> A number is chosen at random from the integers 10 to 30 inclusive. Find the probability that it is (a) a multiple of 3 (b) a multiple of 5 (c) a prime number.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>n(U) = 30 − 10 + 1 = 21 numbers. (a) Multiples of 3: 12, 15, 18, 21, 24, 27, 30 (7), so 7/21 = 1/3. (b) Multiples of 5: 10, 15, 20, 25, 30 (5), so 5/21. (c) Primes: 11, 13, 17, 19, 23, 29 (6), so 6/21 = 2/7.</p></div></details></div><div class="q" id="q45"><p><strong>45.</strong> A fair coin is tossed three times. Write down the sample space, then find the probability of getting (a) exactly two heads (b) at least one tail (c) all three the same.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Sample space (2³ = 8 outcomes): HHH, HHT, HTH, HTT, THH, THT, TTH, TTT. (a) Exactly two heads: HHT, HTH, THH (3), so 3/8. (b) At least one tail is every outcome except HHH (7), so 7/8. (c) All the same: HHH and TTT (2), so 2/8 = 1/4.</p></div></details></div><div class="q" id="q46"><p><strong>46.</strong> A fair die is rolled once. Find the probability of getting (a) a number greater than 4 (b) a number that is not 3 (c) a multiple of 3.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>U = {1, 2, 3, 4, 5, 6}. (a) 5 or 6, so 2/6 = 1/3. (b) P(not 3) = 1 − 1/6 = 5/6. (c) 3 or 6, so 2/6 = 1/3.</p></div></details></div><div class="q" id="q47"><p><strong>47.</strong> Two fair dice are thrown and the scores are added. By drawing a sample space diagram, find the probability that the total is (a) 7 (b) 10 or more (c) any total except 7.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>The totals of two dice give 36 outcomes.</p>
+<table>
+<thead>
+<tr>
+<th>+</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<p>(a) A total of 7 appears 6 times, so 6/36 = 1/6. (b) A total of 10 appears 3 times, 11 appears 2 times and 12 appears once: 6 outcomes, so 6/36 = 1/6. (c) 1 − 1/6 = 5/6.</p></div></details></div><div class="q" id="q48"><p><strong>48.</strong> A fair coin is tossed and a fair die is rolled at the same time. Find the probability of getting (a) a head and an even number (b) a tail and a prime number (c) a head and a number greater than 4.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>There are 2 × 6 = 12 outcomes. (a) A head with 2, 4 or 6 gives 3 outcomes, so 3/12 = 1/4. (b) A tail with 2, 3 or 5 gives 3 outcomes, so 3/12 = 1/4. (c) A head with 5 or 6 gives 2 outcomes, so 2/12 = 1/6.</p></div></details></div><div class="q" id="q49"><p><strong>49.</strong> A spinner has P(red) = 0.15, P(blue) = 0.35 and P(yellow) = 0.30. The only other colour is green. Find (a) P(green) (b) P(not green) (c) the number of times you would expect blue in 200 spins.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) P(green) = 1 − (0.15 + 0.35 + 0.30) = 1 − 0.80 = 0.20. (b) P(not green) = 1 − 0.20 = 0.80. (c) Expected blue = 0.35 × 200 = 70.</p></div></details></div><div class="q" id="q50"><p><strong>50.</strong> A box contains 40 beads, either red or blue, and P(red) = 3/8. (a) How many red beads and how many blue beads are there? (b) How many more blue beads must be added so that P(red) = 1/4?</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) Red = 3/8 × 40 = 15, so blue = 40 − 15 = 25. (b) Let b be the number of blue beads added. Then 15/(40 + b) = 1/4, so 40 + b = 60 and b = 20.</p></div></details></div><div class="q" id="q51"><p><strong>51.</strong> A box contains 60 pens. 18 are black and 24 are blue, and the rest are other colours. A pen is picked at random. Find the probability that it is neither blue nor black.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>Black or blue pens = 18 + 24 = 42. Neither = 60 − 42 = 18. P = 18/60 = 3/10.</p></div></details></div><div class="q" id="q52"><p><strong>52.</strong> A class has 18 boys and 27 girls. A student is selected at random. Find the probability that the student is (a) a girl (b) a boy.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>The class has 18 + 27 = 45 students. (a) 27/45 = 3/5. (b) 18/45 = 2/5. Check: 3/5 + 2/5 = 1.</p></div></details></div><div class="q" id="q53"><p><strong>53.</strong> Cards are numbered 1 to 30. One card is chosen at random. Find the probability that it contains the digit 3.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>The cards with a 3 are 3, 13, 23 and 30 (4 cards). P = 4/30 = 2/15.</p></div></details></div><div class="q" id="q54"><p><strong>54.</strong> The marks of 20 students in a test are shown. A student is chosen at random. Find the probability that the student scored (a) more than 6 (b) exactly 6 (c) between 3 and 9 marks.</p>
+<table>
+<thead>
+<tr>
+<th>Marks</th>
+<th>2</th>
+<th>4</th>
+<th>6</th>
+<th>8</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of students</td>
+<td>3</td>
+<td>5</td>
+<td>8</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>There are 3 + 5 + 8 + 3 + 1 = 20 students. (a) More than 6 means 8 or 10 marks: 3 + 1 = 4, so 4/20 = 1/5. (b) 8/20 = 2/5. (c) Between 3 and 9 means 4, 6 or 8 marks: 5 + 8 + 3 = 16, so 16/20 = 4/5.</p></div></details></div><div class="q" id="q55"><p><strong>55.</strong> A drawer contains 3 grey socks, 4 brown socks and 5 black socks. One sock is picked at random. Find the probability that it is (a) black (b) not brown.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>There are 3 + 4 + 5 = 12 socks. (a) 5/12. (b) Not brown = 3 + 5 = 8, so 8/12 = 2/3.</p></div></details></div><div class="q" id="q56"><p><strong>56.</strong> A bag contains 4 red, 5 blue and 3 green balls. One ball is picked at random. Find the probability that it is (a) red or green (b) blue.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>There are 12 balls. (a) A ball cannot be both red and green, so add the probabilities: 4/12 + 3/12 = 7/12. (b) 5/12.</p></div></details></div><div class="q" id="q57"><p><strong>57.</strong> A bag contains 5 red and 3 blue balls. Two balls are taken one after the other without replacement. Find the probability that (a) both are red (b) the first is red and the second is blue.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) P(both red) = 5/8 × 4/7 = 20/56 = 5/14. (b) P(red then blue) = 5/8 × 3/7 = 15/56. After the first ball is taken, 7 balls remain, and 3 of them are blue.</p></div></details></div><div class="q" id="q58"><p><strong>58.</strong> The probability of rain on Monday is 0.3 and on Tuesday is 0.4. The two days are independent. Find the probability that (a) it rains on both days (b) it does not rain on either day.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) 0.3 × 0.4 = 0.12. (b) P(no rain on Monday) = 0.7 and P(no rain on Tuesday) = 0.6, so 0.7 × 0.6 = 0.42.</p></div></details></div><div class="q" id="q59"><p><strong>59.</strong> In a raffle, 200 tickets are sold and there is one winning ticket. Kojo buys 8 tickets and Ama buys 12 tickets. Find the probability that (a) Kojo wins (b) Ama wins (c) neither of them wins.</p>
+<details class="ans"><summary>Show answer</summary><div class="work"><p>(a) 8/200 = 1/25. (b) 12/200 = 3/50. (c) Kojo and Ama hold 8 + 12 = 20 tickets together, so P(neither) = 1 − 20/200 = 180/200 = 9/10.</p></div></details></div><div class="q" id="q60"><p><strong>60.</strong> In a group of 50 people, 30 like football, 25 like volleyball and 10 like both. A person is chosen at random. Find the probability that the person likes (a) football only (b) football or volleyball (c) neither game.</p><details class="ans"><summary>Show answer</summary><div class="work"><p>Both = 10, football only = 30 − 10 = 20, volleyball only = 25 − 10 = 15 and neither = 50 − 45 = 5. (a) 20/50 = 2/5. (b) 45/50 = 9/10. (c) 5/50 = 1/10.</p></div></details></div>
+
+<h2 id="partC">Part C: Answers and Worked Explanations</h2>
+<p>Check your own working against these. If your answer is different, read the explanation and find which step went wrong.</p>
+<h3 id="asets">Section 1: Sets (Answers 1 to 20)</h3>
+<p><strong>1.</strong> A = {2, 3, 5, 7, 11, 13, 17, 19}. Prime numbers have exactly two factors (1 is not prime). Counting them gives n(A) = 8.</p>
+<p><strong>2.</strong> A′ is everything in ξ that is not in A, so A′ = {1, 3, 5, 7, 9} and n(A′) = 5. Check: n(ξ) − n(A) = 10 − 5 = 5.</p>
+<p><strong>3.</strong> {x : x is a multiple of 3, 3 ≤ x ≤ 15}. Another correct form is {x : x = 3k, k = 1, 2, 3, 4, 5}.</p>
+<p><strong>4.</strong> (a) 7 ∈ (7 is prime). (b) 12 ∉ (12 is even, not odd). (c) 5 ∈ (the integers between 4 and 8 are 5, 6, 7). (d) 9 ∉ (9 = 3 × 3 has three factors, so it is not prime).</p>
+<p><strong>5.</strong> (a) A ∪ B = {1, 2, 3, 4, 5, 6, 8, 10}. List everything in A or B, writing 2, 4 and 6 only once. (b) A ∩ B = {2, 4, 6}, the elements in both sets.</p>
+<p><strong>6.</strong> n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 12 + 9 − 4 = 17.</p>
+<p><strong>7.</strong> A set with 4 elements has 2⁴ = 16 subsets.</p>
+<p><strong>8.</strong> P = {1, 2, 3, 4, 6, 12}, Q = {1, 2, 3, 6, 9, 18} and P ∩ Q = {1, 2, 3, 6}.</p>
+<p><strong>9.</strong> A = {3, 6, 9, 12, 15} and B = {5, 10, 15}. (a) A ∩ B = {15}. (b) A ∪ B = {3, 5, 6, 9, 10, 12, 15}. (c) (A ∪ B)′ = {1, 2, 4, 7, 8, 11, 13, 14}, so n((A ∪ B)′) = 8. Check: 15 − 7 = 8.</p>
+<p><strong>10.</strong> Pupils who play football or volleyball = 40 − 6 = 34. Both = 25 + 18 − 34 = 9.</p>
+<p><strong>11.</strong> Both = 15. Pigeon only = 28 − 15 = 13. Saw at least one bird = 50 − 10 = 40. Seagull only = 40 − 28 = 12. So the number who saw a seagull = 12 + 15 = 27. The Venn diagram has pigeon only 13, both 15, seagull only 12 and neither 10 (13 + 15 + 12 + 10 = 50). P(seagull) = 27/50.</p>
+<p><strong>12.</strong> Science or Art = 60 − 10 = 50. (a) Both = 35 + 28 − 50 = 13. (b) Science only = 35 − 13 = 22. (c) Art only = 28 − 13 = 15. Check: 22 + 13 + 15 + 10 = 60.</p>
+<p><strong>13.</strong> (a) n(A ∪ B) = 22 + 18 − 7 = 33. (b) n((A ∪ B)′) = 50 − 33 = 17.</p>
+<p><strong>14.</strong> Everyone speaks at least one language, so the union is 100. (a) Both = 70 + 45 − 100 = 15. (b) Twi only = 70 − 15 = 55. (c) English only = 45 − 15 = 30. Check: 55 + 15 + 30 = 100.</p>
+<p><strong>15.</strong> (a) A ∩ B (b) A ∪ B (c) A′.</p>
+<p><strong>16.</strong> A set with 3 elements has 2³ = 8 subsets: ∅, {p}, {q}, {r}, {p, q}, {p, r}, {q, r}, {p, q, r}.</p>
+<p><strong>17.</strong> A = {4, 8, 12, 16, 20}. Every multiple of 4 is even, so A ⊂ B. B has 10 elements (2, 4, …, 20). A′ ∩ B means even numbers that are not multiples of 4: {2, 6, 10, 14, 18}, so n(A′ ∩ B) = 5. Check: 10 − 5 = 5.</p>
+<p><strong>18.</strong> Pupils who play at least one game = 120 − 15 = 105. So 75 + 60 − x = 105, which gives 135 − x = 105 and x = 30.</p>
+<p><strong>19.</strong> Work from the centre outwards. All three = 3. Rice and banku only = 8 − 3 = 5. Banku and fufu only = 6 − 3 = 3. Rice and fufu only = 5 − 3 = 2. Rice only = 22 − 5 − 2 − 3 = 12. Banku only = 18 − 5 − 3 − 3 = 7. Fufu only = 15 − 3 − 2 − 3 = 7. Total inside the circles = 12 + 7 + 7 + 5 + 3 + 2 + 3 = 39. (a) None = 40 − 39 = 1. (b) Rice only = 12.</p>
+<p><strong>20.</strong> Both = 5, mustard only = 8 − 5 = 3, ketchup only = 24 − 5 = 19 and neither = 30 − 27 = 3. (a) 27/30 = 9/10. (b) 3/30 = 1/10. (c) 19/30.</p>
+<h3 id="afreq">Section 2: Frequency (Answers 21 to 40)</h3>
+<p><strong>21.</strong> Count how many times each value appears. The total must be 12.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Tally</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>II</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>IIII I</td>
+<td>5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>II</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>III</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Total</td>
+<td></td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<p><strong>22.</strong> In ascending order: 6, 11, 12, 12, 15. Mean = 56 ÷ 5 = 11.2. Median = 12 (the middle value, position 3). Mode = 12. Range = 15 − 6 = 9.</p>
+<p><strong>23.</strong> In ascending order: 2, 3, 4, 7, 7, 7, 8, 9. Total = 47, so mean = 47 ÷ 8 = 5.875. Median position = 4.5, and the 4th and 5th values are both 7, so the median is 7. Mode = 7. Range = 9 − 2 = 7.</p>
+<p><strong>24.</strong> Total = 5 × 8 = 40. The four known numbers add up to 5 + 9 + 10 + 6 = 30. The fifth number = 40 − 30 = 10.</p>
+<p><strong>25.</strong> Lower, because 1.5 m is less than the mean of 1.6 m, so it pulls the mean down. Old total = 8 × 1.6 = 12.8 m. New total = 12.8 + 1.5 = 14.3 m. New mean = 14.3 ÷ 9 = 1.59 m (2 d.p.).</p>
+<p><strong>26.</strong> Old total = 6 × 7 = 42. New total = 7 × 8 = 56. The seventh number = 56 − 42 = 14.</p>
+<p><strong>27.</strong> f × x = 3, 12, 15, 16, 10, so Σfx = 56. Σf = 20. Mean = 56 ÷ 20 = 2.8.</p>
+<p><strong>28.</strong> Σf = 20. Mode = 1 (it has the highest frequency, 8). Median position = (20 + 1) ÷ 2 = 10.5. The running totals are 5, 13, …, so the 10th and 11th values are both 1 and the median = 1. Range = 4 − 0 = 4.</p>
+<p><strong>29.</strong> f × x = 4, 15, 42, 42, 24, so Σfx = 127. Σf = 20. Mean = 127 ÷ 20 = 6.35.</p>
+<p><strong>30.</strong> (a) 36/80 = 0.45. (b) Tails = 80 − 36 = 44, and 44/80 = 0.55. The two relative frequencies add up to 1.</p>
+<p><strong>31.</strong> (a) 41/100 = 0.41. (b) A score greater than 3 means 4, 5 or 6: 20 + 18 + 4 = 42, so the estimate is 42/100 = 0.42.</p>
+<p><strong>32.</strong> The spinner is biased. For a fair 6-sided spinner each score should have a relative frequency near 1/6, about 0.17. Here 3 has 0.41 (far too high), while 1 has 0.03 and 6 has 0.04 (far too low).</p>
+<p><strong>33.</strong> (a) 41/150. (b) At most one girl means 0 or 1 girl: (8 + 41)/150 = 49/150. (c) More than two girls means 3 or 4: (33 + 13)/150 = 46/150 = 23/75.</p>
+<p><strong>34.</strong> (a) P(6) = 1/6, so expected 6s = 1/6 × 300 = 50. (b) P(even) = 3/6 = 1/2, so expected even numbers = 1/2 × 300 = 150.</p>
+<p><strong>35.</strong> There are 10 balls, so P(blue) = 3/10. Expected blue = 3/10 × 200 = 60.</p>
+<p><strong>36.</strong> (a) 6/20 = 0.3. (b) Kofi’s results give the better estimate, because they come from many more trials (200 compared with 20). His relative frequency is 58/200 = 0.29.</p>
+<p><strong>37.</strong> (a) Of the 80 pupils, 50 said yes and 80 − 50 = 30 said no. Of the 50 who said yes, 40 joined and 50 − 40 = 10 did not. Of the 30 who said no, 6 joined and 30 − 6 = 24 did not. (b) 6/30 = 1/5.</p>
+<p><strong>38.</strong> Total mass = 5 × 48 = 240 kg. Mass that left = 45 + 52 = 97 kg. Remaining total = 240 − 97 = 143 kg. Mean = 143 ÷ 3 = 47.7 kg (1 d.p.).</p>
+<p><strong>39.</strong> Σf = 25. f × x = 0, 9, 14, 9, 8, so Σfx = 40 and the mean = 40 ÷ 25 = 1.6. Median position = (25 + 1) ÷ 2 = 13. The running totals are 4, 13, …, so the 13th value is 1 and the median = 1. Mode = 1 (frequency 9).</p>
+<p><strong>40.</strong> Total age = 7 × 18 = 126. The known ages add up to 17 + 19 + 18 + 20 + 18 + 16 = 108, so x = 126 − 108 = 18. In order the ages are 16, 17, 18, 18, 18, 19, 20. Mode = 18. Range = 20 − 16 = 4.</p>
+<h3 id="aprob">Section 3: Probability (Answers 41 to 60)</h3>
+<p><strong>41.</strong> Black marbles = 30 − 12 = 18. P(black) = 18/30 = 3/5.</p>
+<p><strong>42.</strong> MATHEMATICS has 11 letters: M, A, T, H, E, M, A, T, I, C, S. (a) 1/11. (b) 2/11. (c) 0, because there is no B (impossible). (d) The vowels are A, E, A, I, so 4/11. (e) Letters that are not A = 11 − 2 = 9, so 9/11.</p>
+<p><strong>43.</strong> n(U) = 20. (a) Primes: 2, 3, 5, 7, 11, 13, 17, 19 (8 of them), so 8/20 = 2/5. (b) Multiples of 4: 4, 8, 12, 16, 20 (5), so 5/20 = 1/4. (c) Perfect squares: 1, 4, 9, 16 (4), so 4/20 = 1/5.</p>
+<p><strong>44.</strong> n(U) = 30 − 10 + 1 = 21 numbers. (a) Multiples of 3: 12, 15, 18, 21, 24, 27, 30 (7), so 7/21 = 1/3. (b) Multiples of 5: 10, 15, 20, 25, 30 (5), so 5/21. (c) Primes: 11, 13, 17, 19, 23, 29 (6), so 6/21 = 2/7.</p>
+<p><strong>45.</strong> Sample space (2³ = 8 outcomes): HHH, HHT, HTH, HTT, THH, THT, TTH, TTT. (a) Exactly two heads: HHT, HTH, THH (3), so 3/8. (b) At least one tail is every outcome except HHH (7), so 7/8. (c) All the same: HHH and TTT (2), so 2/8 = 1/4.</p>
+<p><strong>46.</strong> U = {1, 2, 3, 4, 5, 6}. (a) 5 or 6, so 2/6 = 1/3. (b) P(not 3) = 1 − 1/6 = 5/6. (c) 3 or 6, so 2/6 = 1/3.</p>
+<p><strong>47.</strong> The totals of two dice give 36 outcomes.</p>
+<table>
+<thead>
+<tr>
+<th>+</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<p>(a) A total of 7 appears 6 times, so 6/36 = 1/6. (b) A total of 10 appears 3 times, 11 appears 2 times and 12 appears once: 6 outcomes, so 6/36 = 1/6. (c) 1 − 1/6 = 5/6.</p>
+<p><strong>48.</strong> There are 2 × 6 = 12 outcomes. (a) A head with 2, 4 or 6 gives 3 outcomes, so 3/12 = 1/4. (b) A tail with 2, 3 or 5 gives 3 outcomes, so 3/12 = 1/4. (c) A head with 5 or 6 gives 2 outcomes, so 2/12 = 1/6.</p>
+<p><strong>49.</strong> (a) P(green) = 1 − (0.15 + 0.35 + 0.30) = 1 − 0.80 = 0.20. (b) P(not green) = 1 − 0.20 = 0.80. (c) Expected blue = 0.35 × 200 = 70.</p>
+<p><strong>50.</strong> (a) Red = 3/8 × 40 = 15, so blue = 40 − 15 = 25. (b) Let b be the number of blue beads added. Then 15/(40 + b) = 1/4, so 40 + b = 60 and b = 20.</p>
+<p><strong>51.</strong> Black or blue pens = 18 + 24 = 42. Neither = 60 − 42 = 18. P = 18/60 = 3/10.</p>
+<p><strong>52.</strong> The class has 18 + 27 = 45 students. (a) 27/45 = 3/5. (b) 18/45 = 2/5. Check: 3/5 + 2/5 = 1.</p>
+<p><strong>53.</strong> The cards with a 3 are 3, 13, 23 and 30 (4 cards). P = 4/30 = 2/15.</p>
+<p><strong>54.</strong> There are 3 + 5 + 8 + 3 + 1 = 20 students. (a) More than 6 means 8 or 10 marks: 3 + 1 = 4, so 4/20 = 1/5. (b) 8/20 = 2/5. (c) Between 3 and 9 means 4, 6 or 8 marks: 5 + 8 + 3 = 16, so 16/20 = 4/5.</p>
+<p><strong>55.</strong> There are 3 + 4 + 5 = 12 socks. (a) 5/12. (b) Not brown = 3 + 5 = 8, so 8/12 = 2/3.</p>
+<p><strong>56.</strong> There are 12 balls. (a) A ball cannot be both red and green, so add the probabilities: 4/12 + 3/12 = 7/12. (b) 5/12.</p>
+<p><strong>57.</strong> (a) P(both red) = 5/8 × 4/7 = 20/56 = 5/14. (b) P(red then blue) = 5/8 × 3/7 = 15/56. After the first ball is taken, 7 balls remain, and 3 of them are blue.</p>
+<p><strong>58.</strong> (a) 0.3 × 0.4 = 0.12. (b) P(no rain on Monday) = 0.7 and P(no rain on Tuesday) = 0.6, so 0.7 × 0.6 = 0.42.</p>
+<p><strong>59.</strong> (a) 8/200 = 1/25. (b) 12/200 = 3/50. (c) Kojo and Ama hold 8 + 12 = 20 tickets together, so P(neither) = 1 − 20/200 = 180/200 = 9/10.</p>
+<p><strong>60.</strong> Both = 10, football only = 30 − 10 = 20, volleyball only = 25 − 10 = 15 and neither = 50 − 45 = 5. (a) 20/50 = 2/5. (b) 45/50 = 9/10. (c) 5/50 = 1/10.</p>
+</main>
+<footer>Disciple Study Group · Maths Study Pack</footer>
+<script>
+const all = () => document.querySelectorAll("details.ans");
+document.getElementById("openAll").onclick = () => all().forEach(d => d.open = true);
+document.getElementById("closeAll").onclick = () => all().forEach(d => d.open = false);
+</script>
+</body>
+</html>
